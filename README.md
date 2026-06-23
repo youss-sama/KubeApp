@@ -148,6 +148,12 @@ kubectl run load-test -n webapp --image=busybox --restart=Never -it --rm \
 ```bash
 watch kubectl get hpa -n webapp
 ```
+
+### 🔒 Sécurité
+
+Le fichier `db/secret.yaml` contenant les identifiants réels n'est pas versionné (voir `.gitignore`).
+Un exemple de structure est fourni dans `db/secret.example.yaml`.
+En production, l'usage d'un outil comme **Sealed Secrets** ou **HashiCorp Vault** serait recommandé pour un chiffrement réel des secrets au repos.
  
 ### ⚠️ Limites connues
  
@@ -309,6 +315,11 @@ kubectl run load-test -n webapp --image=busybox --restart=Never -it --rm \
 ```bash
 watch kubectl get hpa -n webapp
 ```
+### 🔒 Security
+
+The `db/secret.yaml` file containing the real credentials is not version-controlled (see `.gitignore`).
+An example structure is provided in `db/secret.example.yaml`.
+In production, using a tool like **Sealed Secrets** or **HashiCorp Vault** would be recommended for proper encryption of secrets at rest.
  
 ### ⚠️ Known limitations
  
